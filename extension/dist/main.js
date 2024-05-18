@@ -1,0 +1,1 @@
+console.log("The extension is up and running"),window.addEventListener("load",(function(){document.querySelectorAll("img").forEach((function(n){n.src="".concat(browser.runtime.getURL("pp.jpg")),n.alt="an alt text"}))}));

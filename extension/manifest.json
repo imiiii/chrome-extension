@@ -1,0 +1,38 @@
+{
+  "name": "from cursor",
+  "version": "0.0.0.1",
+  "permissions": ["storage", "tabs", "activeTab", "idle", "windows","webNavigation"],
+  "background": {
+      "service_worker": "dist/background.js"
+  },
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "manifest_version": 3,
+  "description": "An extension to display the NASA picture of the day.",
+  "icons": {
+      "16": "icons/nasa1.png",
+      "32": "icons/nasa2.png",
+      "48": "icons/nasa3.png",
+      "128": "icons/nasa4.png"
+  },
+  "action": {
+      "default_popup": "dist/popup/popup.html"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  },
+  "content_scripts": [
+      {
+          "matches": ["<all_urls>"],
+          "js": ["lib/jquery.min.js","dist/background.js", "dist/content-scripts/content.js", "dist/main.js","dist/utils/auth.js","dist/api/user_session.js","dist/api/page_view.js"]
+      }
+  ],
+  "web_accessible_resources": [
+      {
+          "resources": ["images/*.jpeg","pp.jpg","dist/utils/auth.js", "dist/api/user_session.js","dist/api/page_view.js"],
+          "matches": ["<all_urls>"]
+      }
+  ]
+ 
+}

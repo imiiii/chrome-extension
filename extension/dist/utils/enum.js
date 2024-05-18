@@ -1,0 +1,1 @@
+(()=>{"use strict";var t;(function(t){t.GET="get",t.POST="post",t.PUT="put",t.DELETE="delete"})(t||(t={}))})();

@@ -1,0 +1,1 @@
+document.addEventListener("click",(function(e){var t=e.target.tagName;chrome.runtime.sendMessage({action:"createEvent",data:{event_type:"click",element:t,timestamp:(new Date).toISOString()}})}));
